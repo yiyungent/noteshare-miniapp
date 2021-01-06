@@ -54,13 +54,17 @@ Page({
 
   //使用本地 fake 数据实现刷新效果
   getData: function(){
-    var feed = util.getData2();
-    console.log("loaddata");
-    var feed_data = feed.data;
-    this.setData({
-      feed:feed_data,
-      feed_length: feed_data.length
+    var index_api = 'http://localhost:8080/article/list?page=1&limit=5';
+    util.getData(index_api)
+    .then((res)=>{
+      console.log(res);
+      this.setData({
+        feed: res.data.data.list,
+        feed_length: res.data.data.list.length
+      });
+      
     });
+    
   },
   refresh: function(){
     wx.showToast({
