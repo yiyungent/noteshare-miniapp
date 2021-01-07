@@ -1,6 +1,7 @@
 //index.js
 
-var util = require('../../utils/util.js')
+var articleApi = require('../../api/article')
+
 var app = getApp()
 Page({
   data: {
@@ -54,13 +55,11 @@ Page({
 
   //使用本地 fake 数据实现刷新效果
   getData: function(){
-    var index_api = 'http://localhost:8080/article/list?page=1&limit=5';
-    util.getData(index_api)
+    articleApi.hot(1)
     .then((res)=>{
-      console.log(res);
       this.setData({
-        feed: res.data.data.list,
-        feed_length: res.data.data.list.length
+        feed: res.data.list,
+        feed_length: res.data.list.length
       });
       
     });
