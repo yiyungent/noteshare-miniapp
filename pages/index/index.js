@@ -49,7 +49,6 @@ Page({
         });
   },
 
-  //使用本地 fake 数据实现刷新效果
   getData: function(){
     articleApi.hot(1)
     .then((res)=>{
@@ -57,10 +56,9 @@ Page({
         list: res.data.list,
         total_count: res.data.totalCount
       });
-      
     });
-    
   },
+  
   refresh: function(){
     wx.showToast({
       title: '刷新中',
