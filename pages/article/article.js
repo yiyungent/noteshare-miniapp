@@ -72,5 +72,12 @@ Page({
 
   tapName: function(event){
     console.log(event)
-  }
+  },
+
+  bindAddCommentTap: function() {
+    wx.navigateTo({
+      url: '../addComment/addComment?aid='+ this.data.aid
+    });
+  },
+
 })

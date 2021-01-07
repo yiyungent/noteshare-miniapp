@@ -36,7 +36,7 @@
                 <image src="../../images/invite.png"></image>
                 <text>邀请评论</text>
             </view>
-            <view class="write flex-item">
+            <view class="write flex-item" bindtap="bindAddCommentTap">
                 <image src="../../images/write.png"></image>
                 <text>写评论</text>
             </view>
