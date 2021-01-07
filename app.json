@@ -5,13 +5,13 @@
     "pages/notify/notify",
     "pages/chat/chat",
     "pages/more/more",
-    "pages/answer/answer",
-    "pages/question/question"
+    "pages/article/article",
+    "pages/comment/comment"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#0068C4",
-    "navigationBarTitleText": "知乎",
+    "navigationBarTitleText": "乐乎",
     "navigationBarTextStyle": "white",
     "enablePullDownRefresh": true
   },

@@ -5,20 +5,16 @@ var articleApi = require('../../api/article')
 var app = getApp()
 Page({
   data: {
-    feed: [],
-    feed_length: 0
+    list: [],
+    total_count: 0
   },
-  //事件处理函数
-  bindItemTap: function() {
+
+  bindItemTap: function(event) {
     wx.navigateTo({
-      url: '../answer/answer'
+      url: '../article/article?aid='+ event.currentTarget.dataset.id
     })
   },
-  bindQueTap: function() {
-    wx.navigateTo({
-      url: '../question/question'
-    })
-  },
+
   onLoad: function () {
     console.log('onLoad')
     var that = this
@@ -58,8 +54,8 @@ Page({
     articleApi.hot(1)
     .then((res)=>{
       this.setData({
-        feed: res.data.list,
-        feed_length: res.data.list.length
+        list: res.data.list,
+        total_count: res.data.totalCount
       });
       
     });
