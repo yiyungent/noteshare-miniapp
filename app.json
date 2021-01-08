@@ -7,7 +7,8 @@
     "pages/more/more",
     "pages/article/article",
     "pages/comment/comment",
-    "pages/addComment"
+    "pages/addComment/addComment",
+    "pages/wxLogin/wxLogin"
   ],
   "window": {
     "backgroundTextStyle": "light",

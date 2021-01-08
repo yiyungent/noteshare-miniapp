@@ -1,4 +1,0 @@
-/* pages/addComment.wxss */
-.btn-primary {
-  background-color: #8CCEFD;
-}
