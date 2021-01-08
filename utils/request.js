@@ -13,6 +13,9 @@ const request = function(url, method, data) {
 		const options = {
 			url: config.baseUrl + url,
 			method: method,
+			header: {
+				"Authorization": wx.getStorageSync('sKey')
+			},
 			data: data,
 			success: (res) => {
 				console.log(res);
