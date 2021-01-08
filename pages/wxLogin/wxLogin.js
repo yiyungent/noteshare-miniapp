@@ -38,7 +38,10 @@ Page({
                       console.log("更新用户信息成功 -> 跳转")
                       // 更新成功后跳转回上一页
                       wx.navigateBack();
-                    } 
+                    } else {
+                      // 更新失败 也跳转回上一页
+                      wx.navigateBack();
+                    }
                   });
                 },
                 fail: res => {

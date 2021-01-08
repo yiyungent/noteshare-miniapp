@@ -5,13 +5,13 @@
           <image src="../../images/search.png"></image>
           <input placeholder="搜索话题, 问题或人" placeholder-class="search-placeholder"/>
       </view>
-      <view class="search-right flex-item" bindtap="upper">
+      <view class="search-right flex-item" bindtap="goToAddArticle">
           <image src="../../images/lighting.png"></image>
       </view>
   </view>
 
     <block wx:for="{{list}}" wx:key="article_id" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
-        <view class="feed-item">
+        <view class="feed-item" bindtap="bindItemTap" data-id="{{item.article_id}}">
             <view class="feed-source">
                 <a class="">
                     <view class="avatar">
@@ -32,15 +32,15 @@
                         <text class="answer-txt">{{item.article_desc}}</text>
                     </view>
                     <view class="answer-actions" bindtap="bindItemTap" data-id="{{item.article_id}}">
-                        <view class="like dot">
+                        <!-- <view class="like dot">
                             <a>{{item.like_num}} 赞 </a>
-                        </view>
-                        <view class="comments dot">
+                        </view> -->
+                        <view class="comments">
                             <a>{{item.comment_num}} 评论 </a>
                         </view>
-                        <view class="follow-it">
+                        <!-- <view class="follow-it">
                             <a>收藏</a>
-                        </view>
+                        </view> -->
                     </view>
                 </view>
             </view>

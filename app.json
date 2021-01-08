@@ -8,7 +8,8 @@
     "pages/article/article",
     "pages/comment/comment",
     "pages/addComment/addComment",
-    "pages/wxLogin/wxLogin"
+    "pages/wxLogin/wxLogin",
+    "pages/addArticle/addArticle"
   ],
   "window": {
     "backgroundTextStyle": "light",

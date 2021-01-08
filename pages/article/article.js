@@ -1,37 +1,19 @@
 //article.js
 var articleApi = require('../../api/article')
+var util = require('../../utils/util')
 
 var app = getApp()
 Page({
   data: {
-    motto: '乐乎--微信小程序版',
+    // motto: '记乎--微信小程序版',
     userInfo: {},
     aid: 0,
     article: {
-      id: 1,
-      title: "标题",
-      content: "内容",
-      like_num: 123
+      id: 0,
+      title: "",
+      content: "",
     },
-    comments:[
-      {
-        comment_id: 1,
-        content: "这是一条评论",
-        create_time: 1234144,
-        author_id: 1,
-        author_name: "guest",
-        like_num: 12313
-      },
-      {
-        comment_id: 2,
-        content: "这是一条评论",
-        create_time: 1234144,
-        author_id: 2,
-        author_name: "guest",
-        like_num: 12313
-      },
-    ],
-
+    comments:[],
   },
 
   onLoad: function (options) {
@@ -48,6 +30,10 @@ Page({
 
   },
 
+  onShow: function (options) {
+    this.getData();
+  },
+
   getData: function(){
     articleApi.get(this.data.aid)
     .then((res)=>{
@@ -57,6 +43,9 @@ Page({
     });
     articleApi.comments(this.data.aid)
     .then((res)=>{
+      res.data.forEach((item, index)=>{
+        item.create_time_diff = util.getDateDiff(item.create_time);
+      })
       this.setData({
         comments: res.data
       });
