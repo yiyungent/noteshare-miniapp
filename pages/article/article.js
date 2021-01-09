@@ -54,9 +54,9 @@ Page({
   },
 
   bindItemTap: function() {
-    wx.navigateTo({
-      url: '../comment/comment'
-    })
+    // wx.navigateTo({
+    //   url: '../comment/comment'
+    // })
   },
 
   tapName: function(event){
