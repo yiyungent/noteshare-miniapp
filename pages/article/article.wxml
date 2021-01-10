@@ -13,7 +13,7 @@
                 {{article.title}}
             </view>
             <view class="que-content">
-                {{article.content}}
+                <rich-text nodes="{{article.content}}"></rich-text>
             </view>
             <view class="que-follow">
                 <view class="left">
