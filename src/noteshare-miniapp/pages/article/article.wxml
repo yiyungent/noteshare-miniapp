@@ -1,0 +1,76 @@
+<!--question.wxml-->
+<view class="container">
+    <view class="question-wrp">
+        <view class="question-item">
+            <!-- <view class="que-tag">
+                <text class="tag">阅读</text>
+                <text class="tag">电子书</text>
+                <text class="tag">Kindle</text>
+                <text class="tag">书籍</text>
+                <text class="tag">文学</text>
+            </view> -->
+            <view class="que-title">
+                {{article.title}}
+            </view>
+            <view class="que-content">
+                <rich-text nodes="{{article.content}}"></rich-text>
+            </view>
+            <view class="que-follow">
+                <view class="left">
+                    <!-- <view class="watch">
+                        <image src="../../images/eye.png"></image>
+                        <text>{{article.like_num}}</text>
+                    </view> -->
+                    <view class="comment">
+                        <image src="../../images/comment2.png"></image>
+                        <text>{{comments.length}}</text>
+                    </view>
+                </view>
+                <!-- <view class="right">
+                    收藏
+                </view> -->
+            </view>
+        </view>
+        <view class="que-operate flex-wrp">
+            <!-- <view class="invite flex-item">
+                <image src="../../images/invite.png"></image>
+                <text>邀请评论</text>
+            </view> -->
+            <view class="write flex-item" bindtap="bindAddCommentTap">
+                <image src="../../images/write.png"></image>
+                <text>写评论</text>
+            </view>
+        </view>
+    </view>
+    <view class="answer-feed">
+        <view wx:for="{{comments}}" wx:for-index="idx" wx:for-item="item"  bindtap="bindItemTap" class="feed-item">
+            <view class="feed-source">
+                <a class="" bindTap="">
+                    <view class="avatar">
+                        <image src="{{item.author_avatar}}"></image>
+                    </view>
+                    <text>{{item.author_name}}</text>
+                </a>
+            </view>
+            <view class="feed-content">
+                <view class="answer-body">
+                    <view>
+                        <text class="answer-txt">{{item.content}}</text>
+                    </view>
+                    <view class="answer-actions">
+                        <!-- <view class="like dot">
+                            <a>{{item.like_num}} 赞 </a>
+                        </view> -->
+                        <!-- <view class="comments dot">
+                            <a>254 评论 </a>
+                        </view> -->
+                        <view class="time">
+                            <a>{{item.create_time_diff}}</a>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
